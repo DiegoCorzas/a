@@ -1,0 +1,167 @@
+\documentclass[letterpaper, 10pt]{article}
+
+%Paquetes
+    \usepackage[utf8]{inputenc}
+    \usepackage[spanish]{babel}
+    \usepackage{graphicx}
+    \usepackage{multicol}
+    \usepackage{color}
+    \usepackage{changepage}
+    \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry} %Margenes de las hojas
+    \usepackage{polynom}   %Paquete para polinomios en una división larga
+    \usepackage{fbox} %Cajas
+    \usepackage{multicol} %Múltiples columnas
+    \usepackage{amsmath} %Quitar numeración a las ecuaciones
+
+%Cuerpo
+\begin{document}
+    %Portada
+    \include{Recursos/Portada.tex}
+
+    \newpage
+    %índice
+    \tableofcontents
+
+    \as
+
+    \newpage
+    \section{Ejercicio número uno}
+    Efectué las siguientes divisiones
+        \subsection{\textbf{Apartado A}}
+                \begin{center} $4x^6+21x^5-26x^3+27x+10$ entre $x+5$ \end{center}
+                Iniciamos por determinar el coeficiente parcial, dividiendo el término de mayor grado del dividendo entre el término de mayor grado del dividendo.
+                \begin{center} $\frac{4x^6}{x} = 4x^{(6-1)} = 4x^5$ \end{center}
+                Planteamos la división larga.
+                \begin{center} \polylongdiv[style=A]{4x^6+21x^5-26x^3+27x+10}{x+5} \end{center}
+                Con lo que encontramos que el resultado es:
+                \begin{center} \fbox{$4x^5+x^4-5x^3-x^2+2$} \\ \fbox{Sin residuo} \end{center}
+
+            \vspace{3mm}
+            \subsection{\textbf{Apartado B}}
+            \begin{center} $7x^7-2x^5-4x^2-5$ entre $x-1$ \end{center}
+                Iniciamos por determinar el coeficiente parcial.
+                \begin{center} $\frac{7x^7}{x}=7x^{7-1}=7x^6$ \end{center}
+                Planteamos la división larga.
+                \begin{center} \polylongdiv[style=A]{7x^7-2x^5-4x^2-5}{x-1} \end{center}
+                Con lo que encontramos que el resultado es:
+                \begin{center} \fbox{$7x^6+7x^5+5x^4+5x^3+5x^2+x+1$} \\ \fbox{Con residuo: -4} \end{center}
+    
+            \vspace{3mm}
+            \subsection{\textbf{Apartado C}}
+                \begin{center} $3x^5+2x^4-10x^2+6x-17$ entre $x^2+x+1$ \end{center}
+                Iniciamos por determinar el coeficiente parcial.
+                \begin{center} $\frac{3x^5}{x^2}=3x^{5-2}=3x^3$ \end{center}
+                Planteamos la división larga.
+                \begin{center} \polylongdiv[style=A]{3x^5+2x^4-10x^2+6x-17}{x^2+x+1} \end{center}
+                Con lo que encontramos que el resultado es:
+                \begin{center} \fbox{$3x^3-x^2-2x-7$} \\ \fbox{Con residuo: 15x-10} \end{center}
+    \newpage
+    
+    \section{Ejercicio número dos}
+        Encontrar los valores de $k$ para que al dividir $x^4-k^2+3-k$ entre $x-3$ resulte como residuo $4$. \\
+        Aplicamos el teorema del residuo.
+        \begin{equation} \notag p(\alpha)=r(x) \end{equation}
+        Donde:
+        \begin{equation} \notag x^4-k^2x+3-k \end{equation}
+        Hallar el valor de $\alpha$
+        \begin{equation} \notag \alpha=x-3 \rightarrow x-3=0 \rightarrow x=3 \rightarrow \alpha=3 \end{equation}
+        Sustituimos el valor de $x$ en $p(x)$
+        \begin{equation} \notag p(\alpha)=(3)^4-k^2(3)+3-k \end{equation}
+        Resolvemos los exponentes y productos.
+        \begin{equation} \notag p(\alpha)=81-3k^2+3-k \end{equation}
+        Realizamos la adición.
+        \begin{equation} \notag p(\alpha)=84-3k^2+-k \end{equation}
+        Conocemos el valor del residuo, así que sustituimos este valor.
+        \begin{equation} \notag 4=84-3k^2+-k \end{equation}
+        Despejamos las constantes
+        \begin{equation} \notag 0=84-4-3k^2+-k \end{equation}
+        Resolvemos la diferencia.
+        \begin{equation} \notag 0=80-3k^2+-k \end{equation}
+        Reorganizamos términos.
+        \begin{equation} \notag 0=-3k^2-k+80 \end{equation}
+        Aplicamos la fórmula general.
+        \begin{equation} \notag \frac{-b\pm \sqrt{b^2-4ac}}{2a} \end{equation}    
+        Donde encontramos los siguientes valores.
+        \begin{center} $a=-3$\\ $b=-1$ \\ $c=80$ \end{center}
+        Sustituimos valores.
+        \begin{equation} \notag k=\frac{-(-1)\pm \sqrt{(-1)^2-4(-3)(80)}}{2(-3)} \end{equation}
+        Simplificamos signos y exponentes.
+        \begin{equation} \notag k=\frac{1 \pm \sqrt{1+4(3)(80)}}{2(-3)} \end{equation}
+        Realizamos productos.
+        \begin{equation} \notag k=\frac{1 \pm \sqrt{1+960}}{-6} \end{equation}
+        Realizamos la adición.
+        \begin{equation} \notag k=\frac{1 \pm \sqrt{961}}{-6} \end{equation}
+        Simplificamos la raíz cuadrada.
+        \begin{equation} \notag k=\frac{1 \pm 31}{-6} \end{equation}
+        Partimos la expresión en sus dos soluciones.
+        \begin{center}
+            \begin{multicols}{2}
+                $k_1=\frac{1+31}{-6}$ \\
+                $k_2=\frac{1-31}{-6}$
+            \end{multicols}
+        \end{center}
+        Simplificamos.
+        \begin{center}
+            \begin{multicols}{2}
+                $k_1=\frac{32}{-6}$ \\
+                $k_2=\frac{30}{-6}$
+            \end{multicols}
+        \end{center}
+        Realizamos la fracciones.
+        \begin{center}
+            \begin{multicols}{2}
+                $k_1=-\frac{16}{3}$ \\
+                $k_2=5$
+            \end{multicols}  
+        \end{center}
+        A través de los cual encontramos los dos valores que satisfacen las condiciones especificadas.
+        \begin{equation} \notag  k=-\frac{16}{3} \vee 5 \end{equation}
+    \newpage
+
+    \section{Ejercicio número tres}
+    En $R[x]$ hallar los restos dela división de $p(x)=(x+\sqrt{3})^{16}$ \\
+    Aplicamos la división entre términos dados.
+    \begin{equation} \notag \frac{(x+\sqrt{3})^{16}}{x^2+1} \end{equation}
+    Iteramos el teorema del residuo.
+    \begin{equation} \notag p(\alpha)=r(x) \end{equation}
+    Hallamos el valor de $x$
+    \begin{equation} \notag x^2+1=0 \rightarrow x^2=1 \rightarrow x=\sqrt{-1} \rightarrow x=i \end{equation}    
+    Sustituimos el valor de $\alpha$ en $p(x)$
+    \begin{equation} \notag p(\alpha)=(i+\sqrt{3})^{16} \end{equation}
+    Reorganizamos el número complejo.
+    \begin{equation} \notag p(\alpha)=(\sqrt{3}+i)^{16} \end{equation}
+    convertimos el número complejo a su forma polar. Para ello escribiremos el número del siguiente modo.
+    \begin{equation} \notag z=\sqrt{3}+i \end{equation}
+    Hallamos el módulo.
+    \begin{equation} \notag |z|=\sqrt{(3)^2+(1)^2} \rightarrow |z|=\sqrt{3+1} \rightarrow |z|=\sqrt{4} \rightarrow |z|=2 \end{equation}
+    Hallamos el ángulo.
+    \begin{equation} \notag Tan^{-1}(\frac{y}{x})=\theta \rightarrow Tan^{-1}(\frac{1}{\sqrt{3}})=\theta \rightarrow \theta=\frac{\pi}{6}Radianes \end{equation}
+    Escribimos el número en forma polar.
+    \begin{equation} \notag [2(cos(\frac{\pi}{6})+sen(\frac{\pi}{6})i)]^{16} \end{equation}
+    Aplicamos la fórmula de Moivre.
+    \begin{equation} \notag 2^{16}(cos(\frac{\pi}{6}\cdot 16)+sen(\frac{\pi}{6}\cdot 16)i) \end{equation}
+    Simplificamos el producto.
+    \begin{equation} \notag 2^{16}(cos(\frac{8\pi}{3})+sen(\frac{8\pi}{3})i) \end{equation}
+    Expresamos el ángulo de un modo equivalente.
+    \begin{equation} \notag 2^{16}(cos(\frac{2\pi}{3}+2\pi)+sen(\frac{2\pi}{3}+2\pi)i) \end{equation}
+    En el presente caso $2\pi$ representa un periodo, así que lo simplificamos.
+    \begin{equation} \notag 2^{16}(cos(\frac{2\pi}{3})+sen(\frac{2\pi}{3})i) \end{equation}
+    Calculamos las entidades trigonométricas.
+    \begin{equation} \notag r(\alpha)=2^{16}(-\frac{1}{2}+\frac{\sqrt{3}}{2}i) \end{equation}
+    Expresamos esto de un modo equivalente.
+    \begin{equation} \notag r(\alpha)=2^{16}(-\frac{1}{2}+\frac{1}{2} \sqrt{3} i) \end{equation}
+    Simplificamos el exponente.
+    \begin{equation} \notag r(\alpha)=65,536(-\frac{1}{2}+\frac{1}{2} \sqrt{3} i) \end{equation}
+    Realizamos los productos.
+    \begin{equation} \notag r(\alpha)=32,768 \sqrt{3} i -32,768 \end{equation}
+    Con anterioridad obtuvimos que $x=i$, así que una vez más sustituimos valores.
+    \begin{equation} \notag r(x)=32,768 \sqrt{3} x-32,768 \end{equation}
+    Expresamos las constantes de un modo equivalente.
+    \begin{equation} \notag r(x)=2^{15} \sqrt{3} x-2^{15} \end{equation}
+    Factorizamos.
+    \begin{equation} \notag r(x)= 2^{15} (\sqrt{3}x - 1) \end{equation}
+    Hallamos nuestro residuo.
+    \newpage
+    Nuevo párrafo, nótese el desplazamiento. %
+    Hola mundo
+\end{document}
